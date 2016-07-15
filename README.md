@@ -4,9 +4,15 @@ Integração **simplificada** do python com a [API 3.0 da Cielo](http://develope
 A integração permite compra com cartão de crédito e personalização de captura
 automática, número de parcelas, etc.
 
+## Instalação
+
+```
+pip install pythoncielo3
+```
+
 ## Criando e capturando uma compra com cartão de crédito
 ```python
-    from cielo import Transaction
+    from pythoncielo3 import Transaction
 
     # Os valores abaixo são informados pela Cielo. As chaves do ambiente de teste
     # podem ser obtidas em: https://cadastrosandbox.cieloecommerce.cielo.com.br
@@ -28,13 +34,6 @@ automática, número de parcelas, etc.
 
     print(res['success'])
     print(res['raw']['Payment']['Tid'])
-```
-
-## Instalação
-
-```
-git clone https://github.com/eduardomb/pythoncielo3
-pip install -r pythoncielo3/requirements.txt
 ```
 
 ## Disclaimer

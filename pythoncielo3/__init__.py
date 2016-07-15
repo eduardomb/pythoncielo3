@@ -8,6 +8,8 @@ from json import dumps
 # Related third party libs
 from requests import post
 
+__all__ = ['Transaction']
+
 _DEFAULT_TRANSACTION = {
     'MerchantOrderId': None,
     'Customer': {

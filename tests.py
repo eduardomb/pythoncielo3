@@ -1,6 +1,6 @@
 import unittest
 
-from cielo import Transaction
+from pythoncielo3 import Transaction
 
 _MERCHANT_ID = '499b1bc7-8783-4b5d-8d42-f738fb68a848'
 _MERCHANT_KEY = 'UYONWSYAYBAYWLERUJUGHIWCMYYBISWHBHUBMIEB'

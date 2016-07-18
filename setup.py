@@ -3,12 +3,12 @@ from distutils.core import setup
 setup(
     name='pythoncielo3',
     packages=['pythoncielo3'],
-    version='0.0.1',
+    version='0.0.2',
     description='Python integration for Cielo API 3.0',
     author='Eduardo Barbosa',
     author_email='eduardo.barbosa@ufmg.br',
     url='https://github.com/eduardomb/pythoncielo3',
-    download_url='https://github.com/eduardomb/pythoncielo3/tarball/0.0.1',
+    download_url='https://github.com/eduardomb/pythoncielo3/tarball/0.0.2',
     keywords=['cielo', 'api', 'webservice'],
     install_requires=['requests'],
     classifiers=[

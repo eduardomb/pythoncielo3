@@ -85,9 +85,16 @@ class Transaction(object):
             super(Transaction, self).__setattr__(name, value)
 
     def create(self, capture=False):
+        def was_authorized():
+            if res.status_code == 201:
+                return 'AuthorizationCode' in raw.get('Payment', {})
+
+            return False
+
         self._data['Payment']['Capture'] = capture
 
         url = '%s/1/sales/' % self._api_write_url
         res = post(url, dumps(self._data), headers=self._make_header())
+        raw = res.json()
 
-        return {'success':  (res.status_code == 201), 'raw':  res.json()}
+        return {'success': was_authorized(), 'raw': raw}

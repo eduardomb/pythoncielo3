@@ -92,6 +92,17 @@ class TestSandbox(unittest.TestCase):
         self.assertEqual(card['Brand'], 'Visa')
         self.assertFalse(card['SaveCard'])
 
+    def test_create_unauthorized_transaction(self):
+        self.trans.merchant_order_id = '0001'
+        self.trans.amount = 10000
+        self.trans.set_customer(name='Pedro Costa')
+        self.trans.set_credit_card(card_number='0000000000000002',
+                                   holder='Pedro Costa', security_code='123',
+                                   expiration_date='12/2099', brand='Visa')
+
+        res = self.trans.create()
+
+        self.assertFalse(res['success'])
 
 if __name__ == '__main__':
     unittest.main()

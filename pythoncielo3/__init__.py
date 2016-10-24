@@ -43,7 +43,7 @@ class Transaction(object):
         self._merchant_id = merchant_id
         self._merchant_key = merchant_key
         self._api_write_url = get_write_url()
-        self.request_id = randint(1, 99999999999)
+        self.request_id = str(randint(1, 99999999999))
         self._data['Payment']['Provider'] = 'Simulado' if sandbox else 'Cielo'
 
     def _to_camel_case(self, snake_case):
